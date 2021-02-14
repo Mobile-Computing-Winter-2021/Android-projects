@@ -24,12 +24,12 @@
         android:id="@+id/textView2"
         android:layout_width="335dp"
         android:layout_height="37dp"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginBottom="598dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="159dp"
+        android:layout_marginBottom="535dp"
         android:background="@color/black"
         android:fontFamily="sans-serif-medium"
-        android:text="Enter the URL of the song"
+        android:text="DOWNLOAD"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="#FF9800"
         android:textSize="24sp"
@@ -49,18 +49,6 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/edit1"
-        android:layout_width="332dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="150dp"
-        android:ems="10"
-        android:hint="URL OF SONG"
-        android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

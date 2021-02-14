@@ -46,9 +46,9 @@ public class DownloadActivity extends AppCompatActivity {
         Download = (Button) findViewById(R.id.download);
         play = (Button) findViewById(R.id.playd);
         Check = (Button) findViewById(R.id.check);
-        address = (EditText) findViewById(R.id.edit1);
+       // address = (EditText) findViewById(R.id.edit1);
         Stop = (Button) findViewById(R.id.down);
-        String url1 = address.getText().toString();
+       // String url1 = address.getText().toString();
         play.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
@@ -58,35 +58,34 @@ public class DownloadActivity extends AppCompatActivity {
                 startForegroundService(play1);
             }
         });
-       // Stop.setOnClickListener(new View.OnClickListener() {
-                                   // public void onClick(View v)
-                                  //  {
-                                     //   Intent stop1=new Intent(getApplicationContext(),MyService.class);
-                                    //    stopService(stop1);
-                                    //}
+        Stop.setOnClickListener(new View.OnClickListener() {
+                                   public void onClick(View v)
+                                    {
+                                       Intent stop1=new Intent(getApplicationContext(),MyService.class);
+                                        stopService(stop1);
+                                    }
 
 
-                               // });
+                               });
         Download.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                ConnectivityManager connMgr = (ConnectivityManager)
+                ConnectivityManager conn = (ConnectivityManager)
                         getSystemService(Context.CONNECTIVITY_SERVICE);
-                NetworkInfo networkInfo =
-                        connMgr.getActiveNetworkInfo();
-                if (networkInfo != null
-                        && networkInfo.isConnected()) {
+                NetworkInfo network =
+                        conn.getActiveNetworkInfo();
+                if (network != null
+                        && network.isConnected()) {
 
 
                     DownloadSync task = new DownloadSync();
 
 
 
+                           task.execute("https://faculty.iiitd.ac.in/~mukulika/s1.mp3");
 
-                            task.execute("https://faculty.iiitd.ac.in/~mukulika/s1.mp3");
 
-                  //  Log.i("Contents of URL", result);
                 }
             }
         });
@@ -109,9 +108,9 @@ public class DownloadActivity extends AppCompatActivity {
     public boolean isActive() {
         boolean connected = false;
         try {
-            ConnectivityManager cm = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
-            NetworkInfo Info = cm.getActiveNetworkInfo();
-            connected = Info != null && Info.isAvailable() && Info.isConnected();
+            ConnectivityManager conn = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo network = conn.getActiveNetworkInfo();
+            connected = network != null && network.isAvailable() && network.isConnected();
             return connected;
         } catch (Exception e) {
             Log.e("Connectivity Exception", e.getMessage());
@@ -122,32 +121,38 @@ public class DownloadActivity extends AppCompatActivity {
     protected class DownloadSync extends AsyncTask<String, Void, String> {
 
         @Override
-        protected String doInBackground(String... musicURL) {
-            int count;
+        protected String doInBackground(String... URL) {
+            int length;
             System.out.println("on doinback");
-            try {
-                URL url = new URL(musicURL[0]);
-                HttpURLConnection connection = (HttpURLConnection)url.openConnection();
-                connection.setRequestMethod("GET");
-                connection.setDoOutput(true);
-                connection.connect();
+            ConnectivityManager connMgr = (ConnectivityManager)
+                    getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+            if (networkInfo != null && networkInfo.isConnected()) {
+                try {
 
-                InputStream input = connection.getInputStream();
-               // File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC), "filename.mp3");
-               // OutputStream output = new FileOutputStream();
-                FileOutputStream output=openFileOutput("s2.mp3",Context.MODE_PRIVATE);
-                byte[] data = new byte[1024];
+                    URL url = new URL(URL[0]);
+                    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                    connection.setRequestMethod("GET");
+                    connection.setDoOutput(true);
+                    connection.connect();
 
-                while ((count = input.read(data)) != -1) {
-                    output.write(data, 0, count);
+                    InputStream input = connection.getInputStream();
+                    // File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC), "filename.mp3");
+                    // OutputStream output = new FileOutputStream();
+                    FileOutputStream output = openFileOutput("s2.mp3", Context.MODE_PRIVATE);
+                    byte[] data = new byte[1024];
+
+                    while ((length = input.read(data)) != -1) {
+                        output.write(data, 0, length);
+                    }
+
+                    output.flush();
+                    output.close();
+                    input.close();
+
+                } catch (Exception e) {
+                    Log.e("Error: ", e.getMessage());
                 }
-
-                output.flush();
-                output.close();
-                input.close();
-
-            } catch (Exception e) {
-                Log.e("Error: ", e.getMessage());
             }
 
             return null;
