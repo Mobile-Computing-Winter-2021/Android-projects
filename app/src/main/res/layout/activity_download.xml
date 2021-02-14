@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D17171"
+    tools:context=".DownloadActivity">
+
+    <Button
+        android:id="@+id/download"
+        android:layout_width="253dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="299dp"
+        android:layout_marginEnd="79dp"
+        android:text="Press here to continue with the download"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="@color/black" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="335dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginBottom="598dp"
+        android:background="@color/black"
+        android:fontFamily="sans-serif-medium"
+        android:text="Enter the URL of the song"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#FF9800"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="401dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginBottom="688dp"
+        android:fontFamily="sans-serif-black"
+        android:text="DOWNLOAD"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edit1"
+        android:layout_width="332dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="150dp"
+        android:ems="10"
+        android:hint="URL OF SONG"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/playd"
+        android:layout_width="252dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="364dp"
+        android:layout_marginEnd="87dp"
+        android:text="PLAY THE DOWNLOADED SONG"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/check"
+        android:layout_width="251dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="240dp"
+        android:layout_marginEnd="88dp"
+        android:text="Check internet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/down"
+        android:layout_width="252dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="428dp"
+        android:layout_marginEnd="89dp"
+        android:text="STOP PLAYING THE DOWNLOADED SONG"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
