@@ -4,11 +4,26 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.WindowManager;
+
+public class MainActivity extends AppCompatActivity
+{
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.container1,new Fragment1()).commit();
+
     }
+   // public void onResume{
+   // youradapter.refreshrecyclerview(); // implement this method in adpater or simply call here
+    //adpater.notifiDataSetChanged();
+//}
 }
