@@ -97,8 +97,10 @@ public class Dataclass extends RecyclerView.Adapter<Dataclass.myviewholder>
                 Rollno=itemView.findViewById(R.id.t2);
 
             }
+
+            }
         }
-    }
+
 
 
 

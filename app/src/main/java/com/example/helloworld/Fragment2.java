@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TextView;
+
 
 import java.util.ArrayList;
 
@@ -17,7 +19,7 @@ import java.util.ArrayList;
 public class Fragment2 extends Fragment {
 
   public  static EditText e1;
-  public static  EditText e2;
+  public static TextView e2;
    public static EditText e3;
   public static  EditText e4;
 
@@ -42,7 +44,7 @@ public class Fragment2 extends Fragment {
 
         View view=inflater.inflate(R.layout.fragment_2, container, false);
         e1=(EditText)view.findViewById(R.id.edit1);
-        e2=(EditText)view.findViewById(R.id.edit2);
+        e2=(TextView) view.findViewById(R.id.textView7);
         e3=(EditText)view.findViewById(R.id.edit3);
         e4=(EditText)view.findViewById(R.id.edit4);
 
@@ -82,7 +84,7 @@ public class Fragment2 extends Fragment {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 Student sdetails = detail_List.get(Fragment1.pos);
-                sdetails.setName(s.toString());
+                sdetails.setDepartment(s.toString());
 
             }
 
@@ -101,7 +103,7 @@ public class Fragment2 extends Fragment {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 Student sdetails = detail_List.get(Fragment1.pos);
-                sdetails.setName(s.toString());
+                sdetails.setEmailid(s.toString());
 
             }
 
