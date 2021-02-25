@@ -1,6 +1,8 @@
 package com.example.helloworld;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +13,9 @@ public class Details extends AppCompatActivity {
     String rollno1;
     String department1;
     String emailid1;
-    String position2;
+    int position2;
+    FragmentManager fragmentmanager;
+    FragmentTransaction fragmenttransact;
 
 
 
@@ -27,14 +31,21 @@ public class Details extends AppCompatActivity {
         rollno1 = intent.getStringExtra("rollno");
         department1 = intent.getStringExtra("department");
        emailid1= intent.getStringExtra("emailid");
-        position2=intent.getStringExtra("position1");
+       // position2=intent.getStringExtra("position1");
+        position2= intent.getIntExtra("position1",0);
+        Fragment1.pos=position2;
+
+
+        fragmentmanager = getSupportFragmentManager();
+        fragmenttransact = fragmentmanager.beginTransaction();
+        Fragment2 student2 = new Fragment2();
+        fragmenttransact.add(R.id.container2,student2 );
+        //fragmentTransaction.addToBackStack(null);
+        fragmenttransact.commit();
 
 
 
 
-       // getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-        getSupportFragmentManager().beginTransaction().replace(R.id.container2, new Fragment2()).commit();
     }
         public String getMyName() {
             return name1;
@@ -52,7 +63,7 @@ public class Details extends AppCompatActivity {
         return emailid1;
 
    }
-    public String getPosition2()
+    public int getPosition2()
     {
         return position2;
 

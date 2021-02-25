@@ -25,6 +25,8 @@ public class Fragment1 extends Fragment
     //private String mParam2;
     RecyclerView recyclerView;
     ArrayList<Student> dataholder;
+    Dataclass adapterStu;
+    public static int pos;
 
     public Fragment1() {
 
@@ -121,19 +123,21 @@ public class Fragment1 extends Fragment
         dataholder.add(s29);
         Student s30=new Student("priyanshu","20089","computer Science","priyanshu20089@iiit.ac.in");
         dataholder.add(s30);
-        //updateUI();
 
 
 
 
-        recyclerView.setAdapter(new Dataclass(dataholder));
+
+       // recyclerView.setAdapter(new Dataclass(dataholder));
+        singleton.get(getActivity()).setDetailsHolder(dataholder);
+        updateUI();
 
         return view;
     }
     @Override
     public void onResume() {
         super.onResume();
-        //updateUI();
+        updateUI();
     }
    // public void updateUI() {
       //  MainActivity crimeLab = MainActivity.get(getActivity());
@@ -149,4 +153,16 @@ public class Fragment1 extends Fragment
       //  updateSubtitle();
    // }
 
-}
+    private void updateUI()
+    {
+        singleton singletonClass = singleton.get(getActivity());
+        ArrayList<Student> details = singletonClass.getDetailsHolder();
+
+        if (adapterStu == null) {
+            adapterStu = new Dataclass(details);
+            recyclerView.setAdapter(adapterStu);
+        } else {
+            adapterStu.notifyDataSetChanged();
+        }
+
+    }}

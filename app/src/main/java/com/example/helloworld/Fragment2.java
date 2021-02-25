@@ -4,10 +4,14 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+
+import java.util.ArrayList;
 
 
 public class Fragment2 extends Fragment {
@@ -42,26 +46,73 @@ public class Fragment2 extends Fragment {
         e3=(EditText)view.findViewById(R.id.edit3);
         e4=(EditText)view.findViewById(R.id.edit4);
 
-       Details activity = (Details) getActivity();
-        String myName = activity.getMyName();
-       String rollno = activity.getMyRollno();
-       String department = activity.getMyDepartment();
-        String email = activity.getMyemailid();
-        String pos=activity.getPosition2();
+        ArrayList<Student> detail_List = singleton.get(getActivity()).getDetailsHolder();
+        Student sdetails = detail_List.get(Fragment1.pos);
+        e1.setText(sdetails.getName());
+        e2.setText(sdetails.getRollno());
+        e3.setText(sdetails.getDepartment());
+        e4.setText(sdetails.getEmailid());
 
-        System.out.println(myName);
-        e1.setText(myName);
-        e2.setText(rollno);
-        e3.setText(department);
-        e4.setText(email);
-        //dataholder.get(pos).getName();
-       // if(!((e1.getText())equals(hold)
+        e1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                Student sdetails = detail_List.get(Fragment1.pos);
+                sdetails.setName(s.toString());
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s)
+            {
+
+            }
+        });
+
+        e3.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                Student sdetails = detail_List.get(Fragment1.pos);
+                sdetails.setName(s.toString());
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s)
+            {
+
+            }
+        });
+        e4.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                Student sdetails = detail_List.get(Fragment1.pos);
+                sdetails.setName(s.toString());
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s)
+            {
+
+            }
+        });
 
 
-      //  Bundle bundle=getArguments();
-
-        //String myString =bundle.getString("name");
-        //System.out.println("name");
         return view;
 
     }

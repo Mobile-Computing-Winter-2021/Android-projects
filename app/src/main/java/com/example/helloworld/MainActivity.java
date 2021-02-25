@@ -5,21 +5,30 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.WindowManager;
 
 public class MainActivity extends AppCompatActivity
 {
+    FragmentManager fragmentmanager;
+    FragmentTransaction fragmenttransact;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.container1,new Fragment1()).commit();
+
+        fragmentmanager = getSupportFragmentManager();
+        fragmenttransact = fragmentmanager.beginTransaction();
+        Fragment1 student1 = new Fragment1();
+        fragmenttransact.add(R.id.container1,student1 );
+        //fragmentTransaction.addToBackStack(null);
+        fragmenttransact.commit();
 
     }
    // public void onResume{

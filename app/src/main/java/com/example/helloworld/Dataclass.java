@@ -60,7 +60,6 @@ public class Dataclass extends RecyclerView.Adapter<Dataclass.myviewholder>
                   intent.putExtra("department",temp.getDepartment());
                    intent.putExtra("emailid",temp.getEmailid());
                    intent.putExtra("position1",position);
-
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     v.getContext().startActivity(intent);
 
