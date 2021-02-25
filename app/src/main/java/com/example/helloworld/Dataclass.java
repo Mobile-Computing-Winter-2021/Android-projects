@@ -23,7 +23,7 @@ import java.util.ArrayList;
 
 public class Dataclass extends RecyclerView.Adapter<Dataclass.myviewholder>
     {
-        ArrayList<Student> dataholder;
+        public static ArrayList<Student> dataholder;
        // private final OnItemClickListener listener;
         Context context;
 
@@ -47,6 +47,7 @@ public class Dataclass extends RecyclerView.Adapter<Dataclass.myviewholder>
 
             holder.Name.setText(dataholder.get(position).getName());
             holder.Rollno.setText(dataholder.get(position).getRollno());
+
             holder.Rollno.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -56,21 +57,22 @@ public class Dataclass extends RecyclerView.Adapter<Dataclass.myviewholder>
 
                     intent.putExtra("name",temp.getName());
                     intent.putExtra("rollno",temp.getRollno());
-                   intent.putExtra("department",temp.getDepartment());
+                  intent.putExtra("department",temp.getDepartment());
                    intent.putExtra("emailid",temp.getEmailid());
-                  // intent.putExtra("position")
+                   intent.putExtra("position1",position);
 
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     v.getContext().startActivity(intent);
 
-                   // Bundle bundle = new Bundle();
-                    //bundle.putString("name",temp.getName());
-                    //bundle.putString("rollno",temp.getRollno());
-                    //bundle.putString("department",temp.getDepartment());
-                    //bundle.putString("emailid",temp.getDepartment());
+                  // Bundle bundle = new Bundle();
+                  // bundle.putString("name",temp.getName());
+                   // bundle.putString("rollno",temp.getRollno());
+                   // bundle.putString("department",temp.getDepartment());
+                   // bundle.putString("emailid",temp.getDepartment());
 
-                    //Fragment2 mapFragment = new Fragment2();
-                    //mapFragment.setArguments(bundle);
+                   // Fragment1 mapFragment = new Fragment1();
+                   // mapFragment.setArguments(bundle);
+                   // v.getContext().startActivity(intent);
 
                 }
             });

@@ -13,7 +13,7 @@
         android:layout_height="42dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="112dp"
-        android:text="TextView"
+        android:text="NAME"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,7 +34,7 @@
         android:layout_height="43dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="182dp"
-        android:text="TextView"
+        android:text="ROLLNO"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="180dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,7 +55,7 @@
         android:layout_height="44dp"
         android:layout_marginStart="63dp"
         android:layout_marginTop="250dp"
-        android:text="TextView"
+        android:text="BRANCH"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -63,8 +63,8 @@
         android:id="@+id/edit3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="173dp"
-        android:layout_marginTop="249dp"
+        android:layout_marginStart="184dp"
+        android:layout_marginTop="248dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,7 +76,7 @@
         android:layout_height="41dp"
         android:layout_marginStart="64dp"
         android:layout_marginTop="317dp"
-        android:text="TextView"
+        android:text="EMAILID"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -84,8 +84,8 @@
         android:id="@+id/edit4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="173dp"
-        android:layout_marginTop="313dp"
+        android:layout_marginStart="184dp"
+        android:layout_marginTop="316dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
@@ -95,9 +95,11 @@
         android:id="@+id/textView6"
         android:layout_width="266dp"
         android:layout_height="40dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="38dp"
         android:text="DETAILS OF STUDENTS"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="105dp"
-        tools:layout_editor_absoluteY="38dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

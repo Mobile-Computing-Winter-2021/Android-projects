@@ -20,8 +20,12 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="4dp"
 
+            android:background="#9A6B6B"
+            android:backgroundTint="#C8B4B4"
+            android:fontFamily="sans-serif-medium"
             android:gravity="center_vertical"
-            android:text="This is Header Text"
+            android:text="Text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="#000"
             android:textSize="24sp" />
 
@@ -32,7 +36,8 @@
             android:layout_below="@+id/t1"
             android:layout_marginLeft="4dp"
 
-            android:text="This is Description Text"
+            android:text="Text"
+            android:textColor="#C12F2F"
             android:textSize="20dp" />
 
     </RelativeLayout>

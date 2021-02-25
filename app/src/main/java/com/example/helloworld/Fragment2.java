@@ -42,22 +42,26 @@ public class Fragment2 extends Fragment {
         e3=(EditText)view.findViewById(R.id.edit3);
         e4=(EditText)view.findViewById(R.id.edit4);
 
-        Details activity = (Details) getActivity();
+       Details activity = (Details) getActivity();
         String myName = activity.getMyName();
-        String rollno = activity.getMyRollno();
-        String department = activity.getMyDepartment();
+       String rollno = activity.getMyRollno();
+       String department = activity.getMyDepartment();
         String email = activity.getMyemailid();
+        String pos=activity.getPosition2();
+
         System.out.println(myName);
         e1.setText(myName);
         e2.setText(rollno);
         e3.setText(department);
         e4.setText(email);
-       // if(!((e1.getText())equals())
+        //dataholder.get(pos).getName();
+       // if(!((e1.getText())equals(hold)
 
 
-        //Bundle bundle=getArguments();
+      //  Bundle bundle=getArguments();
 
-       // String myString =bundle.getString("name");
+        //String myString =bundle.getString("name");
+        //System.out.println("name");
         return view;
 
     }

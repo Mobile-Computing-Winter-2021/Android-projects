@@ -7,10 +7,11 @@ import android.os.Bundle;
 import android.view.WindowManager;
 
 public class Details extends AppCompatActivity {
-    String name;
-    String rollno;
-    String department;
-    String emailid;
+    String name1;
+    String rollno1;
+    String department1;
+    String emailid1;
+    String position2;
 
 
 
@@ -21,40 +22,46 @@ public class Details extends AppCompatActivity {
         // String name;
 
 
-        Intent intent = getIntent();
-        name = intent.getStringExtra("name");
-        rollno = intent.getStringExtra("rollno");
-         department = intent.getStringExtra("department");
-        emailid = intent.getStringExtra("emailid");
-        // } catch(Exception e) {
-        //  e.printStackTrace();
-        // }
+       Intent intent = getIntent();
+        name1 = intent.getStringExtra("name");
+        rollno1 = intent.getStringExtra("rollno");
+        department1 = intent.getStringExtra("department");
+       emailid1= intent.getStringExtra("emailid");
+        position2=intent.getStringExtra("position1");
 
 
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+
+       // getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.container2, new Fragment2()).commit();
     }
         public String getMyName() {
-            return name;
+            return name1;
         }
-       public String getMyRollno() {
-        return rollno;
+      public String getMyRollno() {
+        return rollno1;
         }
         public String getMyDepartment()
         {
-            return department;
+            return department1;
 
         }
     public String getMyemailid()
     {
-        return emailid;
+        return emailid1;
+
+   }
+    public String getPosition2()
+    {
+        return position2;
 
     }
 
 
 
-       // Bundle bundle = new Bundle();
+
+    // Bundle bundle = new Bundle();
       //  bundle.putString("name",name);
        // bundle.putString("rollno",rollno);
         //bundle.putString("department",department);
