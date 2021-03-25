@@ -243,12 +243,12 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     }
 
-    private void saveDataAcc(float x, float y, float z) {
+    private void saveDataAcc(float x, float y, float z,long time) {
         Acceloroom model = new Acceloroom();
         model.setXval(x);
         model.setYval(y);
         model.setZval(z);
-       // model.setTime(time);
+       model.setTime(time);
 
 
         Database1.getInstance(getApplicationContext()).mainDao().insertAllData(model);
@@ -258,10 +258,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     }
 
-    private void saveDatalight(float x) {
+    private void saveDatalight(float x,long time) {
         Lightdb model = new Lightdb();
         model.setXval(x);
-
+        model.setTime(time);
         Database1.getInstance(getApplicationContext()).mainDao().insertAllLight(model);
 
 
@@ -289,7 +289,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
 
                 Toast.makeText(this, "x=" + x + ", y=" + y + ", z=" + z, Toast.LENGTH_LONG).show();
-                saveDataAcc(x, y, z);
+                saveDataAcc(x, y, z,currentTime);
 
                 Gravity = event.values.clone();
 
@@ -351,7 +351,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 if (switch4.isChecked()) {
                     float x = event.values[0];
                     Toast.makeText(this, "x=" + x, Toast.LENGTH_LONG).show();
-                    saveDatalight(x);
+                    long currentTime = System.currentTimeMillis();
+                    saveDatalight(x,currentTime);
 
 
                 }

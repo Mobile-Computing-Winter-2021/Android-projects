@@ -24,8 +24,8 @@ public class Acceloroom implements Serializable{
 
     @ColumnInfo(name = "zvalue")
     private float zval;
-  // @ColumnInfo(name ="timestamp")
-   //private long time;
+   @ColumnInfo(name ="timestamp")
+   private long time;
 
 
 
@@ -62,12 +62,12 @@ public class Acceloroom implements Serializable{
     public void setZval(float zval) {
         this.zval = zval;
     }
-    //public long getTime() {
-       // return time;
-  //  }
-    //public void setTime(long time) {
-       //this.time = time;
-   // }
+    public long getTime() {
+        return time;
+    }
+    public void setTime(long time) {
+       this.time = time;
+    }
 
 
 }

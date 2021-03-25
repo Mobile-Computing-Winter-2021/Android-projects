@@ -10,7 +10,7 @@ import android.content.Context;
 import androidx.room.Database;
 
 
-@Database(entities = {Acceloroom.class,GPSdb.class,Lightdb.class,Lineardb.class,Proximity.class,Temperaturedb.class}, version = 5,exportSchema = false)
+@Database(entities = {Acceloroom.class,GPSdb.class,Lightdb.class,Lineardb.class,Proximity.class,Temperaturedb.class}, version = 7,exportSchema = false)
 public abstract class Database1 extends RoomDatabase{
 
 

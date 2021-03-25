@@ -12,7 +12,8 @@ public class Lightdb implements Serializable{
 
     @ColumnInfo(name = "xvalue")
     private float xval;
-
+    @ColumnInfo(name ="timestamp")
+    private long time;
 
 
     public int getKey() {
@@ -32,7 +33,12 @@ public class Lightdb implements Serializable{
     public void setXval(float xval) {
         this.xval = xval;
     }
-
+    public long getTime() {
+        return time;
+    }
+    public void setTime(long time) {
+        this.time = time;
+    }
 
 }
 

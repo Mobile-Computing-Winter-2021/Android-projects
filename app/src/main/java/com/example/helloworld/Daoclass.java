@@ -53,6 +53,8 @@ public interface Daoclass {
 
    @Query("select * from  Temperaturedb")
     List<Temperaturedb> getAlltemp();
+
+
     //DELETE DATA
    // @Query("delete from Accelerometer where `key`= :id")
     //void deleteData(int id);
