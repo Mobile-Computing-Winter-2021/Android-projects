@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private TextView display4;
     private TextView display5;
     private TextView display6;
+    private TextView avglight;
     private TextView motion;
     private Switch switch1 = null;
     private Switch switch2 = null;
@@ -78,7 +79,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         avgaccx = (TextView) findViewById(R.id.textView9);
         avgaccy = (TextView) findViewById(R.id.textView10);
         avgaccz = (TextView) findViewById(R.id.textView11);
-        avgacctemp = (TextView) findViewById(R.id.textView12);
+
+      avglight=(TextView) findViewById(R.id.textView19);
         display1 = (TextView) findViewById(R.id.textView13);
         display2 = (TextView) findViewById(R.id.textView14);
         display3 = (TextView) findViewById(R.id.textView15);
@@ -112,23 +114,99 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         accx.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                float x=0 ;
+                int c = 0;
+                long prevHour  = System.currentTimeMillis() - 60*60*1000;
+                List<Acceloroom> values  = Database1.getInstance(MainActivity.this).mainDao().getAllData();
+
+                for(int i = values.size() - 1 ; i >=0 ; i--)
+                {
+
+                    if( values.get(i).getTime() < prevHour)
+                        break;
+
+                    x = x + (values.get(i).getXval());
+
+                    c++;
+                }
+
+                float xVal = x/c;
+                avgaccx.setText(String.valueOf(xVal));
+
             }
         });
         accy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                float y=0 ;
+                int c = 0;
+                long prevHour  = System.currentTimeMillis() - 60*60*1000;
+                List<Acceloroom> values  = Database1.getInstance(MainActivity.this).mainDao().getAllData();
+
+                for(int i = values.size() - 1 ; i >=0 ; i--)
+                {
+
+                    if( values.get(i).getTime() < prevHour)
+                        break;
+
+                    y= y + (values.get(i).getYval());
+                    c++;
+                }
+
+                float yVal = y/c;
+                avgaccy.setText(String.valueOf(yVal));
             }
         });
         accz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                float z=0 ;
+                int c = 0;
+                long prevHour  = System.currentTimeMillis() - 60*60*1000;
+                List<Acceloroom> values  = Database1.getInstance(MainActivity.this).mainDao().getAllData();
+
+                for(int i = values.size() - 1 ; i >=0 ; i--)
+                {
+
+                    if( values.get(i).getTime() < prevHour)
+                        break;
+
+                    z= z + (values.get(i).getZval());
+                    c++;
+                }
+
+                float zVal = z/c;
+                avgaccz.setText(String.valueOf(zVal));
             }
         });
         acctemp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                float s=0 ;
+                int c = 0;
+                long prevHour  = System.currentTimeMillis() - 60*60*1000;
+                List<Lightdb> values  = Database1.getInstance(MainActivity.this).mainDao().getAllDatalight();
+
+                for(int i = values.size() - 1 ; i >=0 ; i--)
+                {
+
+                    if( values.get(i).getTime() < prevHour)
+                        break;
+
+                    s= s+ (values.get(i).getXval());
+                    c++;
+                }
+
+                float sVal = s/c;
+                String mytext = Float.toString(sVal);
+                Toast.makeText(MainActivity.this, mytext, Toast.LENGTH_SHORT).show();
+                avglight.setText(String.valueOf(sVal));
+
+
             }
         });
+
+
 
 
 
@@ -176,7 +254,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
 
                          saveDatagps(latValue, longValue);
-                      //  Toast.makeText(this, "lat=" + latValue + ", longitude=" +longValue , Toast.LENGTH_LONG).show();
+                       Toast.makeText(MainActivity.this, "lat=" + latValue + ", longitude=" +longValue , Toast.LENGTH_LONG).show();
 
 
                     }
@@ -185,6 +263,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             }
         });
     }
+
 
 
     private void saveDatagps(double latitude, double longitude) {

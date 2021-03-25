@@ -194,6 +194,8 @@
         android:layout_height="38dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="444dp"
+        android:textColor="#E91E63"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -214,6 +216,8 @@
         android:layout_height="35dp"
         android:layout_marginStart="232dp"
         android:layout_marginTop="448dp"
+        android:textColor="#E91E63"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -233,7 +237,9 @@
         android:layout_width="180dp"
         android:layout_height="38dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="548dp"
+        android:layout_marginTop="556dp"
+        android:textColor="#E91E63"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -243,19 +249,8 @@
         android:layout_height="47dp"
         android:layout_marginStart="232dp"
         android:layout_marginTop="504dp"
-        android:text="AVERAGE OF TEMPERATURE SENSOR"
+        android:text="AVERAGE OF LIGHT SENSOR"
         android:textSize="10sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="178dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="232dp"
-        android:layout_marginTop="548dp"
-        android:layout_marginBottom="152dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -279,8 +274,8 @@
 
     <TextView
         android:id="@+id/textView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="54dp"
+        android:layout_height="20dp"
         android:layout_marginStart="232dp"
         android:layout_marginTop="296dp"
         android:textColor="#E91E63"
@@ -310,6 +305,17 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="107dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="232dp"
+        android:layout_marginTop="568dp"
+        android:textColor="#E91E63"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
