@@ -254,6 +254,8 @@
         android:layout_height="31dp"
         android:layout_marginStart="232dp"
         android:layout_marginTop="548dp"
+        android:layout_marginBottom="152dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -279,17 +281,19 @@
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="237dp"
-        android:layout_marginTop="281dp"
+        android:layout_marginStart="232dp"
+        android:layout_marginTop="296dp"
+        android:textColor="#E91E63"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="235dp"
-        android:layout_marginTop="334dp"
+        android:layout_width="105dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="196dp"
+        android:layout_marginTop="340dp"
+        android:textColor="#E91E63"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
