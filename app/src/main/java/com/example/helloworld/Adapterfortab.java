@@ -20,8 +20,9 @@ public class Adapterfortab  extends FragmentPagerAdapter {
         switch (position)
         {
             case 0 : return new Fragmentwifi();
-            case 1 : return new Fragmenttrain();
-            case 2 : return new Fragmentlocate();
+            case 1:  return new Fragmentchart();
+            case 2 : return new Fragmenttrain();
+            case 3 : return new Fragmentlocate();
             default: return null;
         }
     }

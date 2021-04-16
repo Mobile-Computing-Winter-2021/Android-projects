@@ -16,9 +16,12 @@ import android.net.wifi.WifiManager;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
+import com.google.android.material.tabs.TabItem;
+import com.google.android.material.tabs.TabLayout;
+
 public class MainActivity extends AppCompatActivity {
     TabLayout tabLayout;
-    TabItem AP,Train,Locateme;
+    TabItem AP,Train,Locateme,chart;
     ViewPager viewPager;
     Adapterfortab pageAdapter;
     @Override
@@ -31,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         AP=(TabItem)findViewById(R.id.tab1);
         Train=(TabItem)findViewById(R.id.tab2);
         Locateme=(TabItem)findViewById(R.id.tab3);
+        chart=(TabItem)findViewById(R.id.tab4);
         viewPager=(ViewPager)findViewById(R.id.vpager);
 
         pageAdapter=new Adapterfortab(getSupportFragmentManager(),tabLayout.getTabCount());
@@ -41,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
 
-                if(tab.getPosition()==0 || tab.getPosition()==1 || tab.getPosition()==2)
+                if(tab.getPosition()==0 || tab.getPosition()==1 || tab.getPosition()==2||tab.getPosition()==3)
                     pageAdapter.notifyDataSetChanged();
             }
 
