@@ -24,10 +24,9 @@
         android:id="@+id/button6"
         android:layout_width="326dp"
         android:layout_height="67dp"
-        android:layout_marginStart="36dp"
         android:layout_marginTop="67dp"
         android:text="SHOW CHART"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="36dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

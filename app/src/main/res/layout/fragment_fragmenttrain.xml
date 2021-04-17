@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="438dp"
-        android:layout_height="326dp"
+        android:layout_width="395dp"
+        android:layout_height="320dp"
         android:layout_marginTop="68dp"
         android:src="@drawable/loca1"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,13 +19,36 @@
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="252dp"
-        android:layout_height="66dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="460dp"
-        android:layout_marginEnd="116dp"
-        android:text="START WARDRIVING"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="212dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="552dp"
+        android:text="START WARDRIVING FOR THIS ROOM"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="226dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="496dp"
+        android:text="ENTER THE ROOM NO"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edit1"
+        android:layout_width="117dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="256dp"
+        android:layout_marginTop="484dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

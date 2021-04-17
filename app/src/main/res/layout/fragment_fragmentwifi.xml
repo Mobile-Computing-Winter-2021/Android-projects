@@ -35,7 +35,7 @@
         android:layout_height="40dp"
         android:layout_marginStart="116dp"
         android:layout_marginTop="352dp"
-        android:text="SHOW CHART"
+        android:text="CREATE CHART"
         android:textColor="#E91E63"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

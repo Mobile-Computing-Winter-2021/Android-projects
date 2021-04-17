@@ -9,13 +9,16 @@ import java.util.List;
         @Insert
         void insertAllData(dbwifi model);
 
-
+        @Insert
+        void insertAlld1(dbaprssi model);
 
 
         //Select All Data
         @Query("select * from wifidatabase ")
         List<dbwifi> getAllData();
 
+        @Query("select * from Wardrivingdb ")
+        List<dbaprssi> getAllD1();
 
 
 

@@ -20,14 +20,15 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="232dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="382dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="WHERE AM I???"
+        android:layout_width="365dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="344dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="WHERE AM 1 WITH EUCLEDIAN?"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#E91E63"
+        android:textColor="@color/black"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,10 +36,84 @@
         android:id="@+id/textView"
         android:layout_width="221dp"
         android:layout_height="58dp"
-        android:layout_marginStart="91dp"
-        android:layout_marginTop="472dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="639dp"
         android:textColor="#E91E63"
         android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="211dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="455dp"
+        android:text="Enter the RSSI value of first AP"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="208dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="511dp"
+        android:text="Enter the RSSI value of secoond AP"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="208dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="576dp"
+        android:text="Enter the RSSI value of third AP"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="116dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="265dp"
+        android:layout_marginTop="455dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName3"
+        android:layout_width="123dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="265dp"
+        android:layout_marginTop="507dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName4"
+        android:layout_width="132dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="265dp"
+        android:layout_marginTop="576dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="366dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="393dp"
+        android:text="WHERE AM I WITH KNN?"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
