@@ -1,5 +1,6 @@
 package com.example.helloworld;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,57 +9,46 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Fragmentchart#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.utils.ColorTemplate;
+
+import java.util.ArrayList;
+import android.net.wifi.ScanResult;
+import android.content.Intent;
+import android.widget.Button;
+
 public class Fragmentchart extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    public static BarChart barChart;
+    BarData barData;
+    BarDataSet barDataSet;
+    ArrayList barEntriesArrayList;
+    public static String list1;
+    public static Button chartdisplay;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+   // private ArrayList<ScanResult> aListModel = new ArrayList<ScanResult>();
 
-    public Fragmentchart() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Fragmentchart.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Fragmentchart newInstance(String param1, String param2) {
-        Fragmentchart fragment = new Fragmentchart();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+
         }
-    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fragmentchart, container, false);
+
+        View view =  inflater.inflate(R.layout.fragment_fragmentchart, container, false);
+        barChart = (BarChart)view.findViewById(R.id.idofchart);
+       // aListModel = (ArrayList<ScanResult>) getActivity().getIntent().getSerializableExtra("list1");
+        chartdisplay=(Button)view.findViewById(R.id.button6);
+
+        return view;
     }
 }
+
