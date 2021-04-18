@@ -183,7 +183,7 @@ public class Fragmentlocate extends Fragment {
                     ArrayList<Integer> roomno = new ArrayList<>();
                     for (int i = 0; i < 7; i++) {
 
-                        Float valueatposition = eucledian.get(i);
+                        Float valueatposition = eucledian1.get(i);
                         int originalpos = copiedeucled.indexOf(valueatposition);
                         if ((originalpos == 0) || (originalpos == 1) || (originalpos == 2) || (originalpos == 3)) {
                             roomcount1++;
