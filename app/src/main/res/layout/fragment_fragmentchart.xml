@@ -25,9 +25,13 @@
         android:id="@+id/button6"
         android:layout_width="326dp"
         android:layout_height="67dp"
-        android:layout_marginStart="53dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="72dp"
+        android:backgroundTint="#FFEB3B"
+        android:outlineAmbientShadowColor="#009688"
         android:text="SHOW CHART"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -36,8 +36,8 @@
         android:id="@+id/textView"
         android:layout_width="242dp"
         android:layout_height="83dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="476dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="452dp"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,10 +56,12 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="239dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="103dp"
-        android:layout_marginTop="584dp"
+        android:layout_width="246dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="544dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
