@@ -37,7 +37,7 @@ import java.util.List;
 
 
 public class Fragmentwifi extends Fragment {
-    public static ListView wifiList;
+    public static ListView wifiListings;
     private WifiManager wifiManager;
     private final int MY_PERMISSIONS_ACCESS_COARSE_LOCATION = 1;
     BroadcastforWifi receiverWifi;
@@ -60,28 +60,28 @@ public class Fragmentwifi extends Fragment {
         View view = inflater.inflate(R.layout.fragment_fragmentwifi, container, false);
 
 
-        wifiList = (ListView) view.findViewById(R.id.wifiList);
-        scan = (Button) view.findViewById(R.id.button3);
+        wifiListings = (ListView) view.findViewById(R.id.wifiList);
+        // scan = (Button) view.findViewById(R.id.button3);
         wifiManager = (WifiManager) getActivity().getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         wifiManager.setWifiEnabled(true);
         if (!wifiManager.isWifiEnabled()) {
-            Toast.makeText(getContext(), "Wifi is getting turned on", Toast.LENGTH_LONG).show();
+           Toast.makeText(getContext(), "Wifi turning on", Toast.LENGTH_LONG).show();
             //   wifiManager.setWifiEnabled(true);
-            scan.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+            //  scan.setOnClickListener(new View.OnClickListener() {
+            //   @Override
+            //   public void onClick(View v) {
 
 
-                    if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION)
-                            != PackageManager.PERMISSION_GRANTED) {
-                        ActivityCompat.requestPermissions(
-                                getActivity(), new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, MY_PERMISSIONS_ACCESS_COARSE_LOCATION);
-                    } else {
-                        wifiManager.startScan();
-                    }
-                }
-            });
+            if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION)
+                    != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(
+                        getActivity(), new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, MY_PERMISSIONS_ACCESS_COARSE_LOCATION);
+            } else {
+                wifiManager.startScan();
+            }
         }
+
+
         return view;
     }
 
@@ -91,10 +91,10 @@ public class Fragmentwifi extends Fragment {
         switch (requestCode) {
             case MY_PERMISSIONS_ACCESS_COARSE_LOCATION:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(getActivity(), "permission granted", Toast.LENGTH_SHORT).show();
+
                     wifiManager.startScan();
                 } else {
-                    Toast.makeText(getActivity(), "permission not granted", Toast.LENGTH_SHORT).show();
+
                     return;
                 }
                 break;
@@ -108,7 +108,7 @@ public class Fragmentwifi extends Fragment {
         super.onResume();
 
 
-        receiverWifi = new BroadcastforWifi(wifiManager, wifiList);
+        receiverWifi = new BroadcastforWifi(wifiManager, wifiListings);
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION);
         requireActivity().registerReceiver(receiverWifi, intentFilter);

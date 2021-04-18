@@ -8,18 +8,18 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 public class Adapterfortab  extends FragmentPagerAdapter {
-    int tabcount;
+    int count;
 
-    public Adapterfortab(@NonNull FragmentManager fm, int behavior) {
-        super(fm, behavior);
-        tabcount=behavior;
+    public Adapterfortab(@NonNull FragmentManager fragment, int behavior) {
+        super(fragment, behavior);
+        count=behavior;
     }
 
     @NonNull
     @Override
-    public Fragment getItem(int position)
+    public Fragment getItem(int pos)
     {
-        switch (position)
+        switch (pos)
         {
             case 0 : return new Fragmentwifi();
             case 1:  return new Fragmentchart();
@@ -31,7 +31,7 @@ public class Adapterfortab  extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return tabcount;
+        return count;
     }
 }
 

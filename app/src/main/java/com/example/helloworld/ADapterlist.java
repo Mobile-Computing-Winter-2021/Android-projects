@@ -15,29 +15,29 @@ public class ADapterlist extends BaseAdapter {
 
 
     Context context;
-    LayoutInflater inflater;
-    List<ScanResult> wifiList;
+    LayoutInflater inflate;
+    List<ScanResult> listofwifi;
 
-    public ADapterlist(Context context,List<ScanResult> wifiList)
+    public ADapterlist(Context context,List<ScanResult> listofwifi)
     {
         this.context=context;
-        this.wifiList=wifiList;
-        inflater=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.listofwifi=listofwifi;
+        inflate=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
     @Override
     public int getCount() {
-        return wifiList.size();
+        return listofwifi.size();
     }
-
-    @Override
-    public Object getItem(int position) {
-        return wifiList.get(position);
-    }
-
     @Override
     public long getItemId(int position) {
         return 0;
     }
+
+    @Override
+    public Object getItem(int position) {
+        return listofwifi.get(position);
+    }
+
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -45,9 +45,9 @@ public class ADapterlist extends BaseAdapter {
         View view=convertView;
         if(view==null)
         {
-            view=inflater.inflate(R.layout.listview,null);
+            view=inflate.inflate(R.layout.listview,null);
             holder=new Holder();
-            holder.tvDetails=(TextView)view.findViewById(R.id.textView3);
+            holder.wifidetail=(TextView)view.findViewById(R.id.textView3);
             view.setTag(holder);
         }
         else
@@ -58,6 +58,6 @@ public class ADapterlist extends BaseAdapter {
     }
     class Holder
     {
-        TextView tvDetails;
+        TextView wifidetail;
     }
 }

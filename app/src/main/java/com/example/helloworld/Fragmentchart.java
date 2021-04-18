@@ -23,9 +23,9 @@ import android.widget.Button;
 public class Fragmentchart extends Fragment {
 
     public static BarChart barChart;
-    BarData barData;
-    BarDataSet barDataSet;
-    ArrayList barEntriesArrayList;
+    BarData Data;
+    BarDataSet DataSet;
+    ArrayList barEntries;
     public static String list1;
     public static Button chartdisplay;
 

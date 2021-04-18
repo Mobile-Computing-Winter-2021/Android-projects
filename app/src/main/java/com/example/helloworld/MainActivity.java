@@ -20,33 +20,34 @@ import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
-    TabLayout tabLayout;
+
     TabItem AP,Train,Locateme,chart;
     ViewPager viewPager;
-    Adapterfortab pageAdapter;
+    Adapterfortab pageadapter;
+    TabLayout tabLayout1;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tabLayout=(TabLayout)findViewById(R.id.tablayout1);
+        tabLayout1=(TabLayout)findViewById(R.id.tablayout1);
         AP=(TabItem)findViewById(R.id.tab1);
         Train=(TabItem)findViewById(R.id.tab2);
         Locateme=(TabItem)findViewById(R.id.tab3);
         chart=(TabItem)findViewById(R.id.tab4);
         viewPager=(ViewPager)findViewById(R.id.vpager);
 
-        pageAdapter=new Adapterfortab(getSupportFragmentManager(),tabLayout.getTabCount());
-        viewPager.setAdapter(pageAdapter);
+        pageadapter=new Adapterfortab(getSupportFragmentManager(),tabLayout1.getTabCount());
+        viewPager.setAdapter(pageadapter);
 
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        tabLayout1.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
 
                 if(tab.getPosition()==0 || tab.getPosition()==1 || tab.getPosition()==2||tab.getPosition()==3)
-                    pageAdapter.notifyDataSetChanged();
+                    pageadapter.notifyDataSetChanged();
             }
 
             @Override
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout1));
         //listen for scroll or page change
     }
 }

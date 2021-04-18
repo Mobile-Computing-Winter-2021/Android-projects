@@ -26,33 +26,33 @@ import java.util.List;
 
 public class BroadcastforWifi extends BroadcastReceiver {
 
-    WifiManager wifiManager;
-    StringBuilder sb;
-    ListView wifiDeviceList;
+
+    StringBuilder strings;
+    ListView DeviceList;
     public static ArrayList wifiList;
-   BarData barData;
-    BarDataSet barDataSet;
-    ArrayList barEntriesArrayList;
+   BarData Data;
+    BarDataSet DataSet;
+    ArrayList barEntries;
     public static String list1;
+    WifiManager wifiManager;
 
-
-    public BroadcastforWifi(WifiManager wifiManager, ListView wifiDeviceList) {
+    public BroadcastforWifi(WifiManager wifiManager, ListView DeviceList) {
         this.wifiManager = wifiManager;
-        this.wifiDeviceList = wifiDeviceList;
+        this.DeviceList = DeviceList;
     }
 
     public void onReceive(Context context, Intent intent) {
         String action = intent.getAction();
         if (WifiManager.SCAN_RESULTS_AVAILABLE_ACTION.equals(action)) {
-            sb = new StringBuilder();
+            strings = new StringBuilder();
+            ArrayList<String> deviceList = new ArrayList<>();
 
             List<ScanResult> wifiList = wifiManager.getScanResults();
 
 
-            ArrayList<String> deviceList = new ArrayList<>();
 
             for (ScanResult scanResult : wifiList) {
-                sb.append("\n").append(scanResult.SSID).append(" - ").append("     RSSI:");
+                strings.append("\n").append(scanResult.SSID).append(" - ").append("     RSSI:");
                 deviceList.add("SSID: " + scanResult.SSID + "                 RSSI VALUE: " + scanResult.level);
             }
             //Bundle args = new Bundle();
@@ -63,15 +63,15 @@ public class BroadcastforWifi extends BroadcastReceiver {
 
 
             ArrayAdapter arrayAdapter = new ArrayAdapter(context, android.R.layout.simple_list_item_1, deviceList.toArray());
-            wifiDeviceList.setAdapter(arrayAdapter);
+            DeviceList.setAdapter(arrayAdapter);
             Fragmentchart.chartdisplay.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    barEntriesArrayList = new ArrayList<>();
+                    barEntries = new ArrayList<>();
                     for (int i = 0; i < wifiList.size(); i++) {
 
 
-                        barEntriesArrayList.add(new BarEntry((float) i, wifiManager.calculateSignalLevel(wifiList.get(i).level, 20)));
+                        barEntries.add(new BarEntry((float) i, wifiManager.calculateSignalLevel(wifiList.get(i).level, 20)));
                     }
                     ArrayList<String> labels = new ArrayList<>();
                     for (int i = 0; i < wifiList.size(); i++) {
@@ -80,21 +80,21 @@ public class BroadcastforWifi extends BroadcastReceiver {
 
 
                     Fragmentchart.barChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(labels));
-                    barDataSet = new BarDataSet(barEntriesArrayList, "Strength of Signal");
-                    barData = new BarData(barDataSet);
-                    Fragmentchart.barChart.setData(barData);
+                    DataSet = new BarDataSet(barEntries, "Signal Strength");
+                    Data = new BarData(DataSet);
+                    Fragmentchart.barChart.setData(Data);
 
 
-                    barDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
+                    DataSet.setColors(ColorTemplate.COLORFUL_COLORS);
 
 
-                    barDataSet.setValueTextColor(Color.GREEN);
+                    DataSet.setValueTextColor(Color.BLUE);
 
                     XAxis xAxis = Fragmentchart.barChart.getXAxis();
                     xAxis.setGranularity(1f);
                     xAxis.setGranularityEnabled(true);
 
-                    barDataSet.setValueTextSize(8f);
+                    DataSet.setValueTextSize(12f);
                     Fragmentchart.barChart.getDescription().setEnabled(false);
                 }
             });

@@ -27,21 +27,23 @@ import java.util.List;
 
 
 public class Fragmentlocate extends Fragment {
-    WifiManager wifimanager1;
-    WifiReceiver3 wifiReceiver1;
-    ADapterlist listAdapter1;
-    ListView wifiList4;
+
+
     List mywifiList2;
     List result1;
     Button accx;
     Button accz;
     TextView t1;
     TextView t2;
+    ADapterlist listAdapter1;
+    ListView wifiList4;
      ArrayList wifiList3;
 
     List AP1difference;
     List AP2difference;
     List AP3difference;
+    WifiManager wifimanager1;
+    WifiReceiver3 wifiReceiver1;
 
 
 
@@ -93,7 +95,7 @@ public class Fragmentlocate extends Fragment {
 
           // int indexofanku=ssidlist1.indexOf("ONEPLUS_co_apkhrf");
             int indexofredmi=ssidlist1.indexOf("Redmi");
-            int indexofredmi1=ssidlist1.indexOf("Redmi1");
+            int indexofredmi1=ssidlist1.indexOf("MotoG");
             int indexofgalaxy=ssidlist1.indexOf("Galaxy M21A406");
 
             accx.setOnClickListener(new View.OnClickListener() {
