@@ -26,7 +26,6 @@
         android:theme="@style/AppTheme" >
         android:theme="@style/Theme.AppCompat.NoActionBar"
         <activity android:name=".wifi"></activity>
-        <activity android:name=".SecondActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
