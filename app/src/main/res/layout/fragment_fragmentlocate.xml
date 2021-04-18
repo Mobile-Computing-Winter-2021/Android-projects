@@ -34,12 +34,12 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="221dp"
-        android:layout_height="58dp"
+        android:layout_width="242dp"
+        android:layout_height="83dp"
         android:layout_marginStart="104dp"
         android:layout_marginTop="496dp"
-        android:textColor="#E91E63"
-        android:textSize="30sp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

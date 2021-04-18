@@ -89,9 +89,11 @@ public class Fragmentlocate extends Fragment {
                 rssilist1.add((float) (scanResult.level));
             }
 
-           int indexofanku=ssidlist1.indexOf("ONEPLUS_co_apkhrf");
+          // int indexofanku=ssidlist1.indexOf("ONEPLUS_co_apkhrf");
+            int indexofredmi=ssidlist1.indexOf("Redmi");
             int indexofredmi1=ssidlist1.indexOf("Redmi1");
             int indexofgalaxy=ssidlist1.indexOf("Galaxy M21A406");
+
             accx.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
@@ -99,13 +101,14 @@ public class Fragmentlocate extends Fragment {
                                             List<dbaprssi> values = Databaseclass.getInstance(getActivity()).mainDao().getAllD1();
                                             for (int i = 0; i < values.size(); i++) {
                                                 System.out.println("THE LIst are" + values.get(i).getRSSIAP1());
+
                                             }
 
 
                        for(int i = 0;i<values.size();i++)
                     {
                          float x=(values.get(i).getRSSIAP1())-(rssilist1.get(indexofgalaxy));
-                      float y=(values.get(i).getRSSIAP2())-(rssilist1.get(indexofanku));
+                      float y=(values.get(i).getRSSIAP2())-(rssilist1.get(indexofredmi));
                         float z=(values.get(i).getRSSIAP3())-(rssilist1.get(indexofredmi1));
                         float eucled = (float) Math.sqrt((x)*(x) +(z)*(z));
                         eucledian.add(eucled);
@@ -161,7 +164,7 @@ public class Fragmentlocate extends Fragment {
                             for(int i = 0;i<values1.size();i++)
                             {
                                 float x=(values1.get(i).getRSSIAP1())-(rssilist1.get(indexofgalaxy));
-                              float y=(values1.get(i).getRSSIAP2())-(rssilist1.get(indexofanku));
+                              float y=(values1.get(i).getRSSIAP2())-(rssilist1.get(indexofredmi));
                                 float z=(values1.get(i).getRSSIAP3())-(rssilist1.get(indexofredmi1));
                                 float eucled = (float) Math.sqrt((x)*(x) +(y)*(y)+(z)*(z));
                                 eucledian1.add(eucled);

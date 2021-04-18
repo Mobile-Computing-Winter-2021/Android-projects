@@ -22,8 +22,6 @@ import io.reactivex.Single;
         @Query("select * from Wardrivingdb ")
         List<dbaprssi> getAllD1();
 
-        @Query("Delete from Wardrivingdb where Roomno like :Roomno")
-        void deleteAllFromTable(int Roomno);
 
 
 }
