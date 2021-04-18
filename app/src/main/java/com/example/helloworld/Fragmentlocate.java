@@ -59,7 +59,7 @@ public class Fragmentlocate extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_fragmentlocate, container, false);
        accx = (Button) view.findViewById(R.id.button2);
-    /*    accz = (Button) view.findViewById(R.id.button7);
+       accz = (Button) view.findViewById(R.id.button7);
         t1 = (TextView) view.findViewById(R.id.textView);
         wifimanager1 = (WifiManager) getActivity().
                 getSystemService(Context.WIFI_SERVICE);
@@ -88,9 +88,10 @@ public class Fragmentlocate extends Fragment {
 
                 rssilist1.add((float) (scanResult.level));
             }
-            int indexofredmi=ssidlist1.indexOf("Redmi");
+
+           int indexofanku=ssidlist1.indexOf("ONEPLUS_co_apkhrf");
             int indexofredmi1=ssidlist1.indexOf("Redmi1");
-            int indexofgalaxy=ssidlist1.indexOf("Galaxy M21A406");*/
+            int indexofgalaxy=ssidlist1.indexOf("Galaxy M21A406");
             accx.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
@@ -99,14 +100,14 @@ public class Fragmentlocate extends Fragment {
                                             for (int i = 0; i < values.size(); i++) {
                                                 System.out.println("THE LIst are" + values.get(i).getRSSIAP1());
                                             }
-                                        }
-                                    });
-                  /*  for(int i = 0;i<values.size();i++)
+
+
+                       for(int i = 0;i<values.size();i++)
                     {
                          float x=(values.get(i).getRSSIAP1())-(rssilist1.get(indexofgalaxy));
-                        float y=(values.get(i).getRSSIAP2())-(rssilist1.get(indexofredmi));
-                        float z=(values.get(i).getRSSIAP2())-(rssilist1.get(indexofredmi));
-                        float eucled = (float) Math.sqrt((x)*(x) +(y)*(y)+(z)*(z));
+                      float y=(values.get(i).getRSSIAP2())-(rssilist1.get(indexofanku));
+                        float z=(values.get(i).getRSSIAP3())-(rssilist1.get(indexofredmi1));
+                        float eucled = (float) Math.sqrt((x)*(x) +(z)*(z));
                         eucledian.add(eucled);
 
                     }
@@ -114,27 +115,33 @@ public class Fragmentlocate extends Fragment {
                     if(minIndex==0)
                     {
                       t1.setText("YOU ARE AT ROOM 1");
+                      System.out.println("YOU ARE AT ROOM 1");
                     }
 
-                    if(minIndex==1)
+                   else if(minIndex==1)
                     {
                         t1.setText("YOU ARE AT ROOM 2");
+                        System.out.println("YOU ARE AT ROOM 2");
                     }
-                    if(minIndex==2)
+                   else if(minIndex==2)
                     {
                         t1.setText("YOU ARE AT ROOM 3");
+                        System.out.println("YOU ARE AT ROOM 3");
                     }
-                    if(minIndex==3)
+                   else if(minIndex==3)
                     {
                         t1.setText("YOU ARE AT ROOM 4");
+                        System.out.println("YOU ARE AT ROOM 4");
                     }
-                    if(minIndex==4)
+                  else if(minIndex==4)
                     {
                         t1.setText("YOU ARE AT ROOM 5");
+                        System.out.println("YOU ARE AT ROOM 5");
                     }
-                    if(minIndex==5)
+                else if(minIndex==5)
                     {
                         t1.setText("YOU ARE AT ROOM 6");
+                        System.out.println("YOU ARE AT ROOM 6");
                     }
 
 
@@ -146,7 +153,7 @@ public class Fragmentlocate extends Fragment {
 
                 }
             });
-            accx.setOnClickListener(new View.OnClickListener() {
+            accz.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
@@ -154,8 +161,8 @@ public class Fragmentlocate extends Fragment {
                             for(int i = 0;i<values1.size();i++)
                             {
                                 float x=(values1.get(i).getRSSIAP1())-(rssilist1.get(indexofgalaxy));
-                                float y=(values1.get(i).getRSSIAP2())-(rssilist1.get(indexofredmi));
-                                float z=(values1.get(i).getRSSIAP2())-(rssilist1.get(indexofredmi));
+                              float y=(values1.get(i).getRSSIAP2())-(rssilist1.get(indexofanku));
+                                float z=(values1.get(i).getRSSIAP3())-(rssilist1.get(indexofredmi1));
                                 float eucled = (float) Math.sqrt((x)*(x) +(y)*(y)+(z)*(z));
                                 eucledian1.add(eucled);
 
@@ -171,7 +178,7 @@ public class Fragmentlocate extends Fragment {
             });
 
 
-        }*/
+        }
 
                     return view;
                 }

@@ -4,7 +4,9 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import java.util.List;
 
-    @Dao
+import io.reactivex.Single;
+
+@Dao
     public interface Daoclass {
         @Insert
         void insertAllData(dbwifi model);
@@ -20,7 +22,8 @@ import java.util.List;
         @Query("select * from Wardrivingdb ")
         List<dbaprssi> getAllD1();
 
-
+        @Query("Delete from Wardrivingdb where Roomno like :Roomno")
+        void deleteAllFromTable(int Roomno);
 
 
 }

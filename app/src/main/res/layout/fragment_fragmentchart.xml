@@ -9,24 +9,26 @@
 
     <com.github.mikephil.charting.charts.BarChart
         android:id="@+id/idofchart"
-        android:layout_width="389dp"
-        android:layout_height="573dp"
+        android:layout_width="356dp"
+        android:layout_height="423dp"
         android:layout_marginStart="29dp"
-        android:layout_marginTop="158dp"
+        android:layout_marginTop="183dp"
         android:layout_marginEnd="14dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.392" />
 
     <Button
         android:id="@+id/button6"
         android:layout_width="326dp"
         android:layout_height="67dp"
-        android:layout_marginTop="67dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="68dp"
         android:text="SHOW CHART"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="36dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

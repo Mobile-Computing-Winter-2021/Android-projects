@@ -97,7 +97,7 @@ public class Fragmenttrain extends Fragment {
                    for (int i = 0; i < ssidlist.size(); i++) {
                         if ((ssidlist.get(i)).equals("Galaxy M21A406")) {
                             model1.setRSSIAP1(rssilist.get(i));
-                        } else if ((ssidlist.get(i)).equals("Redmi")) {
+                        } else if ((ssidlist.get(i)).equals("ONEPLUS_co_apkhrf")) {
                             model1.setRSSIAP2(rssilist.get(i));
                        } else if ((ssidlist.get(i)).equals("Redmi1")) {
                             model1.setRSSIAP3(rssilist.get(i));
