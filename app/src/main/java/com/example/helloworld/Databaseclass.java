@@ -6,7 +6,7 @@ import com.example.helloworld.Daoclass;
 import android.content.Context;
 
 import androidx.room.Database;
-@Database(entities = {dbwifi.class,dbaprssi.class}, version = 7,exportSchema = true)
+@Database(entities = {dbwifi.class,dbaprssi.class}, version = 9,exportSchema = true)
 public abstract class Databaseclass extends RoomDatabase{
     private static Databaseclass db;
 
